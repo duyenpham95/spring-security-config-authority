@@ -1,4 +1,4 @@
-# spring-security-basic-using-jdbc-user-details
+# spring-security-config-authority
 This is my spring security learning udemy project notes 
 
 ### Create Controller with simple api
