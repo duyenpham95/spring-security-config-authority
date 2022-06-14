@@ -24,8 +24,6 @@ public class SecurityConfiguration {
         .antMatchers("/not-secured")
         .permitAll()
         .and()
-        .formLogin()
-        .and()
         .httpBasic(withDefaults());
     return http.build();
   }

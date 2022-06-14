@@ -6,23 +6,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WelcomeController {
 
-    @GetMapping("/read-write")
-    public String allowToWrite() {
-        return "You re allowed to write";
-    }
+  @GetMapping("/read-write")
+  public String allowWriteAuth() {
+    return "You re allowed to write";
+  }
 
-    @GetMapping("/read-only")
-    public String allowToRead() {
-        return "You re allowed to read";
-    }
+  @GetMapping("/read-only")
+  public String allowReadAuth() {
+    return "You re allowed to read";
+  }
 
-    @GetMapping("/secured")
-    public String apiOne() {
-        return "Hello, You have been authenticated";
-    }
+  @GetMapping("/secured")
+  public String allowAnthenticatedUser() {
+    return "Hello, You have been authenticated";
+  }
 
-    @GetMapping("/not-secured")
-    public String apiTwo() {
-        return "Success without authentication";
-    }
+  @GetMapping("/not-secured")
+  public String allowAll() {
+    return "Success without authentication";
+  }
 }
