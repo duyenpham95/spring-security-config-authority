@@ -15,14 +15,18 @@ public class SecurityConfiguration {
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http.authorizeHttpRequests()
-        .antMatchers("/read-write")
-        .hasAuthority("WRITE")
-        .antMatchers("/read-only")
-        .hasAuthority("READ")
-        .antMatchers("/secured")
-        .authenticated()
         .antMatchers("/not-secured")
         .permitAll()
+        .antMatchers("/secured")
+        .authenticated()
+        .antMatchers("/read-only")
+        .hasAuthority("READ")
+        .antMatchers("/read-write")
+        .hasAuthority("WRITE")
+        .antMatchers("/user-role")
+        .hasRole("USER")
+        .antMatchers("/admin-role")
+        .hasRole("ADMIN")
         .and()
         .httpBasic(withDefaults());
     return http.build();

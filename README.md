@@ -21,7 +21,7 @@ This is my spring security learning udemy project notes
 - Using JPA to mapping and query entity from DB
 - Create `CustomUser` & `Authority` entities mapping to tables in DB
 
-### Implement custom AuthenticationProvider
+### Implement custom AuthenticationProvider & config Authority 
 - Create `CustomAuthenticationProvider` implements `AuthenticationProvider`
 - `CustomAuthenticationProvider` override `authenticate` and `supports` method
   - `authenticate`: implements logic to authenticate
@@ -31,3 +31,11 @@ This is my spring security learning udemy project notes
 - `AuthenticationProvider` leverages `Authentication` and `Pricipal` interfaces instead of `UserDetails` in `UserDetailsService`
 - When testing in Postman using basic auth with username and password values in DB (find values in `db.sql` in source code)
 - Look into the pdf again for knowledge revision that: Spring Security flow goes to `AuthenticationProvider` before going to `UserDetailsService`
+
+### Config Role
+Role:
+- group of authorities
+- stored in authorities table also
+- prefix in DB with prefix: ROLE_ and use name of role in code only cuz spring security already mapping for us
+
+Config with hasRole(roleName) for according api

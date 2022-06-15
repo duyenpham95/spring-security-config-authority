@@ -24,5 +24,9 @@ INSERT INTO AUTHORITY (user_name, authority) VALUES
 ('duyen_2@gmail.com', 'READ'),
 ('duyen_2@gmail.com', 'WRITE');
 
+INSERT INTO AUTHORITY (user_name, authority) VALUES
+('duyen@gmail.com', 'ROLE_USER'),
+('duyen_2@gmail.com', 'ROLE_USER'),
+('duyen_2@gmail.com', 'ROLE_ADMIN');
 
 
