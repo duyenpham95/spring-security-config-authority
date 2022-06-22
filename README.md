@@ -42,5 +42,8 @@ Config with hasRole(roleName) for according api
 
 ### Custom filter: Add filter to filter email contains `test` word
 - create a custom filter implements Filter interface, override doFilter Method
-- add addFilterBefore, addFilterAfter in security config 
+- add addFilterBefore in security config 
 - add `@EnableWebSecurity(debug = true)` (notice this is for debug mode that the filter works without the `@EnableWebSecurity`) property `logging.level.org.springframework.security.web.FilterChainProxy=DEBUG` to log debug when test the order of filters
+
+#### Similarly, Add filter to filter using addFilterAfter
+#### With addFilterAt: add a filter at the location of specified filter class. But the order of the execution can't be guaranteed. This will replace the filters already present at the same order
