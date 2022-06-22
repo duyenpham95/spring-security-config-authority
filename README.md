@@ -39,3 +39,8 @@ Role:
 - prefix in DB with prefix: ROLE_ and use name of role in code only cuz spring security already mapping for us
 
 Config with hasRole(roleName) for according api
+
+### Custom filter: Add filter to filter email contains `test` word
+- create a custom filter implements Filter interface, override doFilter Method
+- add addFilterBefore in security config 
+- add `@EnableWebSecurity(debug = true)` (notice this is for debug mode that the filter works without the `@EnableWebSecurity`) property `logging.level.org.springframework.security.web.FilterChainProxy=DEBUG` to log debug when test the order of filters
